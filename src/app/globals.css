@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
-@theme inline {
-  /* Brand — laranja-pêssego do logo */
+/* ---------- Brand (igual nos dois temas) ---------- */
+:root {
   --color-brand-50: #fff7ec;
   --color-brand-100: #ffead0;
   --color-brand-200: #ffd9ac;
@@ -12,8 +12,11 @@
   --color-brand-700: #b86523;
   --color-brand-800: #8c4a1a;
   --color-brand-900: #5c2f11;
+}
 
-  /* Neutros — dark theme */
+/* ---------- Dark theme (padrão) ---------- */
+:root,
+[data-theme="dark"] {
   --color-bg: #0a0a0a;
   --color-bg-elevated: #161616;
   --color-bg-hover: #1f1f1f;
@@ -23,11 +26,59 @@
   --color-text-secondary: #a3a3a3;
   --color-text-muted: #737373;
 
-  /* Status */
   --color-success: #34d399;
   --color-warning: #fbbf24;
   --color-danger: #f87171;
   --color-info: #60a5fa;
+
+  --selection-fg: var(--color-bg);
+}
+
+/* ---------- Light theme ---------- */
+[data-theme="light"] {
+  --color-bg: #fafaf7;          /* off-white com toque quente */
+  --color-bg-elevated: #ffffff; /* cards brancos */
+  --color-bg-hover: #f4f4ed;
+  --color-border: #e5e5e0;
+  --color-border-strong: #c8c8c0;
+  --color-text-primary: #18181b;
+  --color-text-secondary: #52525b;
+  --color-text-muted: #a1a1aa;
+
+  /* Status — versões mais escuras pra contrastar com fundo claro */
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-danger: #dc2626;
+  --color-info: #2563eb;
+
+  --selection-fg: #ffffff;
+}
+
+@theme inline {
+  --color-brand-50: var(--color-brand-50);
+  --color-brand-100: var(--color-brand-100);
+  --color-brand-200: var(--color-brand-200);
+  --color-brand-300: var(--color-brand-300);
+  --color-brand-400: var(--color-brand-400);
+  --color-brand-500: var(--color-brand-500);
+  --color-brand-600: var(--color-brand-600);
+  --color-brand-700: var(--color-brand-700);
+  --color-brand-800: var(--color-brand-800);
+  --color-brand-900: var(--color-brand-900);
+
+  --color-bg: var(--color-bg);
+  --color-bg-elevated: var(--color-bg-elevated);
+  --color-bg-hover: var(--color-bg-hover);
+  --color-border: var(--color-border);
+  --color-border-strong: var(--color-border-strong);
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-muted: var(--color-text-muted);
+
+  --color-success: var(--color-success);
+  --color-warning: var(--color-warning);
+  --color-danger: var(--color-danger);
+  --color-info: var(--color-info);
 
   --font-sans: var(--font-jakarta), system-ui, -apple-system, sans-serif;
 }
@@ -42,11 +93,12 @@ body {
   color: var(--color-text-primary);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  transition: background-color 200ms ease;
 }
 
 ::selection {
   background: var(--color-brand-400);
-  color: var(--color-bg);
+  color: var(--selection-fg);
 }
 
 ::-webkit-scrollbar {
