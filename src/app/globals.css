@@ -34,22 +34,30 @@
   --selection-fg: var(--color-bg);
 }
 
-/* ---------- Light theme ---------- */
+/* ---------- Light theme — paleta "wellness / natural" ---------- *
+ * Fundo creme + neutros sage (verde-acinzentado) + texto verde-floresta
+ * + terracota nos alertas. Identidade totalmente distinta do dark
+ * (que usa preto + cinzas neutros).
+ */
 [data-theme="light"] {
-  --color-bg: #fafaf7;          /* off-white com toque quente */
-  --color-bg-elevated: #ffffff; /* cards brancos */
-  --color-bg-hover: #f4f4ed;
-  --color-border: #e5e5e0;
-  --color-border-strong: #c8c8c0;
-  --color-text-primary: #18181b;
-  --color-text-secondary: #52525b;
-  --color-text-muted: #a1a1aa;
+  --color-bg: #f5f1e8;            /* eggshell / creme quente */
+  --color-bg-elevated: #fdfbf3;   /* off-white levemente mais claro que o bg, papel */
+  --color-bg-hover: #ede8d9;      /* hover bege */
+  --color-border: #d8dec8;        /* sage suave */
+  --color-border-strong: #b3bda0; /* sage médio */
+  --color-text-primary: #1d3026;  /* verde-floresta profundo */
+  --color-text-secondary: #4a6055;/* olive médio */
+  --color-text-muted: #8a9b8e;    /* sage acinzentado */
 
-  /* Status — versões mais escuras pra contrastar com fundo claro */
-  --color-success: #059669;
-  --color-warning: #d97706;
-  --color-danger: #dc2626;
-  --color-info: #2563eb;
+  /* Status no vocabulário "natural":
+     success = verde-musgo (mais profundo que o emerald do dark)
+     warning = mostarda/honey (amber mais maduro)
+     danger  = terracota (vermelho-tijolo, não vermelho puro)
+     info    = índigo poeira (azul-acinzentado, não azul vibrante) */
+  --color-success: #3d7a4f;
+  --color-warning: #c08a1e;
+  --color-danger: #b54a30;
+  --color-info: #4a6b8a;
 
   --selection-fg: #ffffff;
 }
